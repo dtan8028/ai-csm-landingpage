@@ -184,7 +184,7 @@ const App = () => {
             </h1>
             
             <p style={styles.paragraph}>
-              AI agent that delivers personalized product adoption, 
+              The AI agent that delivers personalized product adoption, 
               to unlock user value, reduce churn and fuel scalable growth.
             </p>
           </div>
