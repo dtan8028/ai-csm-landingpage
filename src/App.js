@@ -17,7 +17,7 @@ const App = () => {
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#222"
+            stroke="#e2e8f0"
             strokeWidth={strokeWidth}
           />
           {/* Progress circle */}
@@ -26,7 +26,7 @@ const App = () => {
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#4ade80"
+            stroke="#3182ce"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
@@ -47,7 +47,7 @@ const App = () => {
             justifyContent: 'center',
             fontSize: size / 4,
             fontWeight: 'bold',
-            color: '#fff'
+            color: '#3182ce'
           }}
         >
           {text}
@@ -65,9 +65,25 @@ const App = () => {
       fontFamily: 'Arial, sans-serif'
     },
     nav: {
-      maxWidth: '1200px',
+      maxWidth: '100%',
       margin: '0 auto',
       padding: '1.5rem 1rem',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      zIndex: 1000,
+      backgroundColor: 'white',
+      boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+      borderBottom: '1px solid #e2e8f0'
+    },
+    navContent: {
+      maxWidth: '1200px',
+      width: '100%',
+      margin: '0 auto',
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center'
@@ -91,7 +107,7 @@ const App = () => {
     main: {
       maxWidth: '1200px',
       margin: '0 auto',
-      padding: '0 1rem',
+      padding: '5rem 1rem 0',
       display: 'flex',
       minHeight: '80vh'
     },
@@ -217,10 +233,10 @@ const App = () => {
       background: 'linear-gradient(135deg, #3182ce 0%, #9f7aea 100%)'
     },
     
-    // PowerfulFeatures section styles
+    // PowerfulFeatures section styles - updated to light theme
     featuresContainer: {
-      backgroundColor: '#000',
-      color: '#fff',
+      backgroundColor: '#f7fafc',
+      color: '#1a202c',
       padding: '4rem 1rem'
     },
     featuresInner: {
@@ -239,10 +255,12 @@ const App = () => {
       gap: '1.5rem'
     },
     featureCard: {
-      backgroundColor: '#111',
+      backgroundColor: 'white',
       borderRadius: '0.5rem',
       padding: '2rem',
-      position: 'relative'
+      position: 'relative',
+      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
+      border: '1px solid #e2e8f0'
     },
     featureHeader: {
       display: 'flex',
@@ -254,20 +272,21 @@ const App = () => {
       fontWeight: 'bold'
     },
     featureSubtitle: {
-      color: '#a0aec0',
+      color: '#718096',
       marginTop: '0.5rem'
     },
     featureDesc: {
-      color: '#a0aec0'
+      color: '#4a5568'
     },
     commandBox: {
-      backgroundColor: '#222',
+      backgroundColor: '#f7fafc',
       borderRadius: '0.25rem',
       padding: '0.75rem',
       fontFamily: 'monospace',
       fontSize: '0.875rem',
       marginTop: '1rem',
-      marginBottom: '2rem'
+      marginBottom: '2rem',
+      border: '1px solid #e2e8f0'
     },
     commandRow: {
       display: 'flex',
@@ -275,7 +294,7 @@ const App = () => {
       marginBottom: '0.5rem'
     },
     commandDivider: {
-      borderTop: '1px solid #333',
+      borderTop: '1px solid #e2e8f0',
       paddingTop: '0.5rem',
       marginTop: '0.5rem'
     },
@@ -286,26 +305,31 @@ const App = () => {
     shortcutKey: {
       width: '3rem',
       height: '3rem',
-      backgroundColor: '#222',
+      backgroundColor: '#f7fafc',
       borderRadius: '0.25rem',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize: '1.5rem'
+      fontSize: '1.5rem',
+      border: '1px solid #e2e8f0',
+      color: '#4a5568'
     },
     shortcutPlus: {
-      margin: '0 0.5rem'
+      margin: '0 0.5rem',
+      color: '#4a5568'
     }
   };
 
   return (
     <div style={styles.container}>
-      {/* Navigation */}
+      {/* Navigation - Fixed Header */}
       <nav style={styles.nav}>
-        <div style={styles.logo}>Sarah</div>
-        <div style={styles.navButtons}>
-          <button style={styles.navButton}>Early Access</button>
-          <button style={styles.navButton}>Join our Slack</button>
+        <div style={styles.navContent}>
+          <div style={styles.logo}>Sarah</div>
+          <div style={styles.navButtons}>
+            <button style={styles.navButton}>Early Access</button>
+            <button style={styles.navButton}>Join our Slack</button>
+          </div>
         </div>
       </nav>
 
@@ -372,7 +396,7 @@ const App = () => {
         </div>
       </div>
 
-      {/* Powerful Features Section */}
+      {/* Powerful Features Section - Updated to light theme */}
       <div style={styles.featuresContainer}>
         <div style={styles.featuresInner}>
           <h2 style={styles.featuresTitle}>Powerful Features</h2>
@@ -398,19 +422,19 @@ const App = () => {
                 <h3 style={styles.featureTitle}>Contextual Assistance</h3>
                 <div style={styles.commandBox}>
                   <div style={styles.commandRow}>
-                    <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#a0aec0' }} />
-                    <span style={{ color: '#d1d5db' }}>Type a goal or search...</span>
+                    <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#718096' }} />
+                    <span style={{ color: '#4a5568' }}>Type a goal or search...</span>
                   </div>
                   <div style={styles.commandDivider}>
                     <div style={styles.commandRow}>
                       <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3b82f6' }} />
-                      <span style={{ color: '#d1d5db' }}>Create new workflow</span>
+                      <span style={{ color: '#4a5568' }}>Create new workflow</span>
                     </div>
                   </div>
                   <div style={styles.commandDivider}>
                     <div style={styles.commandRow}>
-                      <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#4ade80' }} />
-                      <span style={{ color: '#d1d5db' }}>Show me how to...</span>
+                      <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3182ce' }} />
+                      <span style={{ color: '#4a5568' }}>Show me how to...</span>
                     </div>
                   </div>
                 </div>
