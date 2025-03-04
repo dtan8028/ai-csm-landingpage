@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Command, Eye } from 'lucide-react';
+import { ArrowRight, Command, Eye, Network } from 'lucide-react';
 
 const App = () => {
   // Custom CircularProgressBar component
@@ -52,6 +52,44 @@ const App = () => {
         >
           {text}
         </div>
+      </div>
+    );
+  };
+
+  // Network Diagram Component
+  const NetworkDiagram = ({ size = 150 }) => {
+    return (
+      <div style={{ width: size, height: size, position: 'relative', marginRight: '1rem' }}>
+        <svg width={size} height={size} viewBox="0 0 200 200">
+          {/* Central node */}
+          <circle cx="100" cy="100" r="15" fill="#3182ce" opacity="0.9"/>
+          
+          {/* Connecting paths and nodes */}
+          <line x1="100" y1="100" x2="60" y2="60" stroke="#3182ce" strokeWidth="2"/>
+          <circle cx="60" cy="60" r="8" fill="#666666" opacity="0.2"/>
+          
+          <line x1="100" y1="100" x2="140" y2="60" stroke="#3182ce" strokeWidth="2"/>
+          <circle cx="140" cy="60" r="8" fill="#666666" opacity="0.2"/>
+          
+          <line x1="100" y1="100" x2="60" y2="140" stroke="#3182ce" strokeWidth="2"/>
+          <circle cx="60" cy="140" r="8" fill="#666666" opacity="0.2"/>
+          
+          <line x1="100" y1="100" x2="140" y2="140" stroke="#3182ce" strokeWidth="2"/>
+          <circle cx="140" cy="140" r="8" fill="#666666" opacity="0.2"/>
+          
+          {/* Secondary connections */}
+          <line x1="60" y1="60" x2="30" y2="40" stroke="#dddddd" strokeWidth="1.5"/>
+          <circle cx="30" cy="40" r="5" fill="#666666" opacity="0.15"/>
+          
+          <line x1="140" y1="60" x2="170" y2="40" stroke="#dddddd" strokeWidth="1.5"/>
+          <circle cx="170" cy="40" r="5" fill="#666666" opacity="0.15"/>
+          
+          <line x1="60" y1="140" x2="30" y2="160" stroke="#dddddd" strokeWidth="1.5"/>
+          <circle cx="30" cy="160" r="5" fill="#666666" opacity="0.15"/>
+          
+          <line x1="140" y1="140" x2="170" y2="160" stroke="#dddddd" strokeWidth="1.5"/>
+          <circle cx="170" cy="160" r="5" fill="#666666" opacity="0.15"/>
+        </svg>
       </div>
     );
   };
@@ -317,6 +355,15 @@ const App = () => {
     shortcutPlus: {
       margin: '0 0.5rem',
       color: '#4a5568'
+    },
+    // New style for the personalized guidance card with network diagram
+    personalizedHeader: {
+      display: 'flex',
+      alignItems: 'flex-start',
+      marginBottom: '1rem'
+    },
+    personalizedContent: {
+      flex: 1
     }
   };
 
@@ -416,31 +463,42 @@ const App = () => {
               </p>
             </div>
 
-            {/* Feature 2: Contextual Assistance */}
+            {/* Feature 2: Personalized In App Guidance - NOW WITH NETWORK DIAGRAM */}
             <div style={styles.featureCard}>
-              <div>
-                <h3 style={styles.featureTitle}>Contextual Assistance</h3>
-                <div style={styles.commandBox}>
+              <div style={styles.personalizedHeader}>
+                <NetworkDiagram />
+                <div style={styles.personalizedContent}>
+                  <h3 style={styles.featureTitle}>Personalized In-App Guidance</h3>
+                  <p style={styles.featureSubtitle}>Tailored to each user</p>
+                </div>
+              </div>
+              
+              <div style={styles.commandBox}>
+                <div style={styles.commandRow}>
+                  <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#718096' }} />
+                  <span style={{ color: '#4a5568' }}>Type a goal or search...</span>
+                </div>
+                <div style={styles.commandDivider}>
                   <div style={styles.commandRow}>
-                    <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#718096' }} />
-                    <span style={{ color: '#4a5568' }}>Type a goal or search...</span>
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3b82f6' }} />
+                    <span style={{ color: '#4a5568' }}>Show my personalized journey</span>
                   </div>
-                  <div style={styles.commandDivider}>
-                    <div style={styles.commandRow}>
-                      <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3b82f6' }} />
-                      <span style={{ color: '#4a5568' }}>Create new workflow</span>
-                    </div>
+                </div>
+                <div style={styles.commandDivider}>
+                  <div style={styles.commandRow}>
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3182ce' }} />
+                    <span style={{ color: '#4a5568' }}>Complete my onboarding tasks</span>
                   </div>
-                  <div style={styles.commandDivider}>
-                    <div style={styles.commandRow}>
-                      <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3182ce' }} />
-                      <span style={{ color: '#4a5568' }}>Show me how to...</span>
-                    </div>
+                </div>
+                <div style={styles.commandDivider}>
+                  <div style={styles.commandRow}>
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3182ce' }} />
+                    <span style={{ color: '#4a5568' }}>Find features for my role</span>
                   </div>
                 </div>
               </div>
               <p style={styles.featureDesc}>
-                Navigate seamlessly with our goal-oriented assistance
+                Deliver truly personalized product adoption at scale
               </p>
             </div>
 
