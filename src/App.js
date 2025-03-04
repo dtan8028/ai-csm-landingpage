@@ -1,8 +1,63 @@
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Command, Eye } from 'lucide-react';
 
 const App = () => {
+  // Custom CircularProgressBar component
+  const CircularProgressBar = ({ value, text, size = 96, strokeWidth = 8 }) => {
+    const radius = (size - strokeWidth) / 2;
+    const circumference = radius * 2 * Math.PI;
+    const strokeDashoffset = circumference - (value / 100) * circumference;
+    
+    return (
+      <div style={{ width: size, height: size, position: 'relative' }}>
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+          {/* Background circle */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="transparent"
+            stroke="#222"
+            strokeWidth={strokeWidth}
+          />
+          {/* Progress circle */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            fill="transparent"
+            stroke="#4ade80"
+            strokeWidth={strokeWidth}
+            strokeDasharray={circumference}
+            strokeDashoffset={strokeDashoffset}
+            strokeLinecap="round"
+            transform={`rotate(-90 ${size/2} ${size/2})`}
+          />
+        </svg>
+        {/* Text in the middle */}
+        <div 
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: size / 4,
+            fontWeight: 'bold',
+            color: '#fff'
+          }}
+        >
+          {text}
+        </div>
+      </div>
+    );
+  };
+
   const styles = {
+    // Main container styles
     container: {
       minHeight: '100vh',
       backgroundColor: 'white',
@@ -160,6 +215,86 @@ const App = () => {
       filter: 'blur(60px)',
       opacity: '0.2',
       background: 'linear-gradient(135deg, #3182ce 0%, #9f7aea 100%)'
+    },
+    
+    // PowerfulFeatures section styles
+    featuresContainer: {
+      backgroundColor: '#000',
+      color: '#fff',
+      padding: '4rem 1rem'
+    },
+    featuresInner: {
+      maxWidth: '1200px',
+      margin: '0 auto'
+    },
+    featuresTitle: {
+      fontSize: '2.5rem',
+      fontWeight: 'bold',
+      textAlign: 'center',
+      marginBottom: '4rem'
+    },
+    featuresGrid: {
+      display: 'grid',
+      gridTemplateColumns: window.innerWidth >= 768 ? 'repeat(3, 1fr)' : 'repeat(1, 1fr)',
+      gap: '1.5rem'
+    },
+    featureCard: {
+      backgroundColor: '#111',
+      borderRadius: '0.5rem',
+      padding: '2rem',
+      position: 'relative'
+    },
+    featureHeader: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginBottom: '2rem'
+    },
+    featureTitle: {
+      fontSize: '1.5rem',
+      fontWeight: 'bold'
+    },
+    featureSubtitle: {
+      color: '#a0aec0',
+      marginTop: '0.5rem'
+    },
+    featureDesc: {
+      color: '#a0aec0'
+    },
+    commandBox: {
+      backgroundColor: '#222',
+      borderRadius: '0.25rem',
+      padding: '0.75rem',
+      fontFamily: 'monospace',
+      fontSize: '0.875rem',
+      marginTop: '1rem',
+      marginBottom: '2rem'
+    },
+    commandRow: {
+      display: 'flex',
+      alignItems: 'center',
+      marginBottom: '0.5rem'
+    },
+    commandDivider: {
+      borderTop: '1px solid #333',
+      paddingTop: '0.5rem',
+      marginTop: '0.5rem'
+    },
+    shortcutContainer: {
+      display: 'flex',
+      alignItems: 'center'
+    },
+    shortcutKey: {
+      width: '3rem',
+      height: '3rem',
+      backgroundColor: '#222',
+      borderRadius: '0.25rem',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontSize: '1.5rem'
+    },
+    shortcutPlus: {
+      margin: '0 0.5rem'
     }
   };
 
@@ -174,6 +309,7 @@ const App = () => {
         </div>
       </nav>
 
+      {/* Hero Section */}
       <div style={styles.main}>
         <div style={styles.leftColumn}>
           <div style={styles.contentBox}>
@@ -232,6 +368,79 @@ const App = () => {
 
             {/* Decorative gradient */}
             <div style={styles.decorativeGradient}></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Powerful Features Section */}
+      <div style={styles.featuresContainer}>
+        <div style={styles.featuresInner}>
+          <h2 style={styles.featuresTitle}>Powerful Features</h2>
+          
+          <div style={styles.featuresGrid}>
+            {/* Feature 1: Visual Learning */}
+            <div style={styles.featureCard}>
+              <div style={styles.featureHeader}>
+                <div>
+                  <h3 style={styles.featureTitle}>Visual Learning</h3>
+                  <p style={styles.featureSubtitle}>Shows, not tells</p>
+                </div>
+                <CircularProgressBar value={92} text="92%" />
+              </div>
+              <p style={styles.featureDesc}>
+                Our AI demonstrates tasks in real-time, making learning intuitive and memorable
+              </p>
+            </div>
+
+            {/* Feature 2: Contextual Assistance */}
+            <div style={styles.featureCard}>
+              <div>
+                <h3 style={styles.featureTitle}>Contextual Assistance</h3>
+                <div style={styles.commandBox}>
+                  <div style={styles.commandRow}>
+                    <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#a0aec0' }} />
+                    <span style={{ color: '#d1d5db' }}>Type a goal or search...</span>
+                  </div>
+                  <div style={styles.commandDivider}>
+                    <div style={styles.commandRow}>
+                      <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3b82f6' }} />
+                      <span style={{ color: '#d1d5db' }}>Create new workflow</span>
+                    </div>
+                  </div>
+                  <div style={styles.commandDivider}>
+                    <div style={styles.commandRow}>
+                      <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#4ade80' }} />
+                      <span style={{ color: '#d1d5db' }}>Show me how to...</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p style={styles.featureDesc}>
+                Navigate seamlessly with our goal-oriented assistance
+              </p>
+            </div>
+
+            {/* Feature 3: 24/7 Support */}
+            <div style={styles.featureCard}>
+              <div style={styles.featureHeader}>
+                <div>
+                  <h3 style={styles.featureTitle}>24/7 Support</h3>
+                  <p style={styles.featureSubtitle}>Always available</p>
+                </div>
+                <div style={styles.shortcutContainer}>
+                  <div style={styles.shortcutKey}>
+                    ⌘
+                  </div>
+                  <span style={styles.shortcutPlus}>+</span>
+                  <div style={styles.shortcutKey}>
+                    S
+                  </div>
+                </div>
+              </div>
+              <p style={styles.featureDesc}>
+                Get instant support whenever you need it, reducing resolution time from days to minutes
+              </p>
+            </div>
           </div>
         </div>
       </div>
