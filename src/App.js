@@ -271,7 +271,7 @@ const App = () => {
       background: 'linear-gradient(135deg, #3182ce 0%, #9f7aea 100%)'
     },
     
-    // PowerfulFeatures section styles - updated to light theme
+    // Powerful Features section styles - updated to light theme
     featuresContainer: {
       backgroundColor: '#f7fafc',
       color: '#1a202c',
@@ -356,7 +356,7 @@ const App = () => {
       margin: '0 0.5rem',
       color: '#4a5568'
     },
-    // New style for the personalized guidance card with network diagram
+    // Style for the personalized guidance card with network diagram
     personalizedHeader: {
       display: 'flex',
       alignItems: 'flex-start',
@@ -443,32 +443,18 @@ const App = () => {
         </div>
       </div>
 
-      {/* Powerful Features Section - Updated to light theme */}
+      {/* Powerful Features Section - Updated with new feature cards */}
       <div style={styles.featuresContainer}>
         <div style={styles.featuresInner}>
           <h2 style={styles.featuresTitle}>Powerful Features</h2>
           
           <div style={styles.featuresGrid}>
-            {/* Feature 1: Visual Learning */}
-            <div style={styles.featureCard}>
-              <div style={styles.featureHeader}>
-                <div>
-                  <h3 style={styles.featureTitle}>Visual Learning</h3>
-                  <p style={styles.featureSubtitle}>Shows, not tells</p>
-                </div>
-                <CircularProgressBar value={92} text="92%" />
-              </div>
-              <p style={styles.featureDesc}>
-                Our AI demonstrates tasks in real-time, making learning intuitive and memorable
-              </p>
-            </div>
-
-            {/* Feature 2: Personalized In App Guidance - NOW WITH NETWORK DIAGRAM */}
+            {/* Feature 1: Personalized In-App Agent - UPDATED */}
             <div style={styles.featureCard}>
               <div style={styles.personalizedHeader}>
                 <NetworkDiagram />
                 <div style={styles.personalizedContent}>
-                  <h3 style={styles.featureTitle}>Personalized In-App Guidance</h3>
+                  <h3 style={styles.featureTitle}>Personalized In-App Agent</h3>
                   <p style={styles.featureSubtitle}>Tailored to each user</p>
                 </div>
               </div>
@@ -490,24 +476,32 @@ const App = () => {
                     <span style={{ color: '#4a5568' }}>Complete my onboarding tasks</span>
                   </div>
                 </div>
-                <div style={styles.commandDivider}>
-                  <div style={styles.commandRow}>
-                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3182ce' }} />
-                    <span style={{ color: '#4a5568' }}>Find features for my role</span>
-                  </div>
-                </div>
               </div>
               <p style={styles.featureDesc}>
-                Deliver truly personalized product adoption at scale
+                AI coach guiding each user to achieve their goals
               </p>
             </div>
 
-            {/* Feature 3: 24/7 Support */}
+            {/* Feature 2: Plug and Play - UPDATED */}
             <div style={styles.featureCard}>
               <div style={styles.featureHeader}>
                 <div>
-                  <h3 style={styles.featureTitle}>24/7 Support</h3>
-                  <p style={styles.featureSubtitle}>Always available</p>
+                  <h3 style={styles.featureTitle}>Plug and Play</h3>
+                  <p style={styles.featureSubtitle}>Instant setup</p>
+                </div>
+                <CircularProgressBar value={92} text="92%" />
+              </div>
+              <p style={styles.featureDesc}>
+                No more WalkMe or Pendo workflows—personalized adoption instantly
+              </p>
+            </div>
+
+            {/* Feature 3: Seamless Integration - UPDATED */}
+            <div style={styles.featureCard}>
+              <div style={styles.featureHeader}>
+                <div>
+                  <h3 style={styles.featureTitle}>Seamless Integration</h3>
+                  <p style={styles.featureSubtitle}>Non-intrusive design</p>
                 </div>
                 <div style={styles.shortcutContainer}>
                   <div style={styles.shortcutKey}>
@@ -520,7 +514,7 @@ const App = () => {
                 </div>
               </div>
               <p style={styles.featureDesc}>
-                Get instant support whenever you need it, reducing resolution time from days to minutes
+                Non-intrusive design that complements your software with timely assistance when users need it most
               </p>
             </div>
           </div>
