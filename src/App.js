@@ -17,7 +17,7 @@ const App = () => {
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#e2e8f0"
+            stroke="#1a1a1a"
             strokeWidth={strokeWidth}
           />
           {/* Progress circle */}
@@ -26,7 +26,7 @@ const App = () => {
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#3182ce"
+            stroke="#4285F4"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
@@ -47,7 +47,7 @@ const App = () => {
             justifyContent: 'center',
             fontSize: size / 4,
             fontWeight: 'bold',
-            color: '#3182ce'
+            color: '#4285F4'
           }}
         >
           {text}
@@ -62,44 +62,44 @@ const App = () => {
       <div style={{ width: size, height: size, position: 'relative', marginRight: '1rem' }}>
         <svg width={size} height={size} viewBox="0 0 200 200">
           {/* Central node */}
-          <circle cx="100" cy="100" r="15" fill="#3182ce" opacity="0.9"/>
+          <circle cx="100" cy="100" r="15" fill="#4285F4" opacity="0.9"/>
           
           {/* Connecting paths and nodes */}
-          <line x1="100" y1="100" x2="60" y2="60" stroke="#3182ce" strokeWidth="2"/>
-          <circle cx="60" cy="60" r="8" fill="#666666" opacity="0.2"/>
+          <line x1="100" y1="100" x2="60" y2="60" stroke="#4285F4" strokeWidth="2"/>
+          <circle cx="60" cy="60" r="8" fill="#999999" opacity="0.3"/>
           
-          <line x1="100" y1="100" x2="140" y2="60" stroke="#3182ce" strokeWidth="2"/>
-          <circle cx="140" cy="60" r="8" fill="#666666" opacity="0.2"/>
+          <line x1="100" y1="100" x2="140" y2="60" stroke="#4285F4" strokeWidth="2"/>
+          <circle cx="140" cy="60" r="8" fill="#999999" opacity="0.3"/>
           
-          <line x1="100" y1="100" x2="60" y2="140" stroke="#3182ce" strokeWidth="2"/>
-          <circle cx="60" cy="140" r="8" fill="#666666" opacity="0.2"/>
+          <line x1="100" y1="100" x2="60" y2="140" stroke="#4285F4" strokeWidth="2"/>
+          <circle cx="60" cy="140" r="8" fill="#999999" opacity="0.3"/>
           
-          <line x1="100" y1="100" x2="140" y2="140" stroke="#3182ce" strokeWidth="2"/>
-          <circle cx="140" cy="140" r="8" fill="#666666" opacity="0.2"/>
+          <line x1="100" y1="100" x2="140" y2="140" stroke="#4285F4" strokeWidth="2"/>
+          <circle cx="140" cy="140" r="8" fill="#999999" opacity="0.3"/>
           
           {/* Secondary connections */}
-          <line x1="60" y1="60" x2="30" y2="40" stroke="#dddddd" strokeWidth="1.5"/>
-          <circle cx="30" cy="40" r="5" fill="#666666" opacity="0.15"/>
+          <line x1="60" y1="60" x2="30" y2="40" stroke="#444444" strokeWidth="1.5"/>
+          <circle cx="30" cy="40" r="5" fill="#999999" opacity="0.2"/>
           
-          <line x1="140" y1="60" x2="170" y2="40" stroke="#dddddd" strokeWidth="1.5"/>
-          <circle cx="170" cy="40" r="5" fill="#666666" opacity="0.15"/>
+          <line x1="140" y1="60" x2="170" y2="40" stroke="#444444" strokeWidth="1.5"/>
+          <circle cx="170" cy="40" r="5" fill="#999999" opacity="0.2"/>
           
-          <line x1="60" y1="140" x2="30" y2="160" stroke="#dddddd" strokeWidth="1.5"/>
-          <circle cx="30" cy="160" r="5" fill="#666666" opacity="0.15"/>
+          <line x1="60" y1="140" x2="30" y2="160" stroke="#444444" strokeWidth="1.5"/>
+          <circle cx="30" cy="160" r="5" fill="#999999" opacity="0.2"/>
           
-          <line x1="140" y1="140" x2="170" y2="160" stroke="#dddddd" strokeWidth="1.5"/>
-          <circle cx="170" cy="160" r="5" fill="#666666" opacity="0.15"/>
+          <line x1="140" y1="140" x2="170" y2="160" stroke="#444444" strokeWidth="1.5"/>
+          <circle cx="170" cy="160" r="5" fill="#999999" opacity="0.2"/>
         </svg>
       </div>
     );
   };
 
   const styles = {
-    // Main container styles
+    // Main container styles - DARK THEME
     container: {
       minHeight: '100vh',
-      backgroundColor: 'white',
-      color: '#1a202c',
+      backgroundColor: 'black',
+      color: 'white',
       fontFamily: 'Arial, sans-serif'
     },
     nav: {
@@ -114,9 +114,8 @@ const App = () => {
       left: 0,
       right: 0,
       zIndex: 1000,
-      backgroundColor: 'white',
-      boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-      borderBottom: '1px solid #e2e8f0'
+      backgroundColor: 'black',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
     },
     navContent: {
       maxWidth: '1200px',
@@ -128,14 +127,15 @@ const App = () => {
     },
     logo: {
       fontSize: '1.5rem',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      color: 'white'
     },
     navButtons: {
       display: 'flex',
       gap: '1.5rem'
     },
     navButton: {
-      color: '#4a5568',
+      color: 'rgba(255, 255, 255, 0.7)',
       backgroundColor: 'transparent',
       border: 'none',
       cursor: 'pointer',
@@ -147,7 +147,8 @@ const App = () => {
       margin: '0 auto',
       padding: '5rem 1rem 0',
       display: 'flex',
-      minHeight: '80vh'
+      minHeight: '100vh',
+      alignItems: 'center'
     },
     leftColumn: {
       width: '50%',
@@ -163,18 +164,20 @@ const App = () => {
       fontSize: '4rem',
       fontWeight: 'bold',
       marginBottom: '1.5rem',
-      lineHeight: '1.1'
+      lineHeight: '1.1',
+      color: 'white'
     },
     blueText: {
-      color: '#3182ce'
+      color: '#4285F4',
+      display: 'block'
     },
     paragraph: {
       fontSize: '1.25rem',
-      color: '#4a5568',
+      color: 'rgba(255, 255, 255, 0.7)',
       lineHeight: '1.6'
     },
     ctaButton: {
-      backgroundColor: '#3182ce',
+      backgroundColor: '#4285F4',
       color: 'white',
       padding: '0.75rem 1.5rem',
       borderRadius: '0.5rem',
@@ -184,7 +187,8 @@ const App = () => {
       gap: '0.5rem',
       border: 'none',
       cursor: 'pointer',
-      width: 'fit-content'
+      width: 'fit-content',
+      transition: 'all 0.2s ease'
     },
     rightColumn: {
       width: '50%',
@@ -198,15 +202,15 @@ const App = () => {
     productWindow: {
       width: '100%',
       aspectRatio: '4/3',
-      backgroundColor: 'white',
-      borderRadius: '0.5rem',
-      border: '1px solid #e2e8f0',
+      backgroundColor: '#111',
+      borderRadius: '0.75rem',
+      border: '1px solid rgba(255, 255, 255, 0.1)',
       overflow: 'hidden',
-      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+      boxShadow: '0 20px 80px rgba(66, 133, 244, 0.2)'
     },
     windowHeader: {
       height: '2rem',
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#1a1a1a',
       display: 'flex',
       alignItems: 'center',
       padding: '0 1rem',
@@ -216,20 +220,21 @@ const App = () => {
       width: '0.75rem',
       height: '0.75rem',
       borderRadius: '50%',
-      backgroundColor: '#cbd5e0'
+      backgroundColor: 'rgba(255, 255, 255, 0.3)'
     },
     windowContent: {
-      padding: '1rem'
+      padding: '1rem',
+      background: 'linear-gradient(to bottom right, #111, #1a1a1a)'
     },
     pulseLine: {
       height: '1rem',
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#222',
       borderRadius: '0.25rem',
       marginBottom: '1rem'
     },
     pulseRect: {
       height: '8rem',
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#222',
       borderRadius: '0.25rem',
       marginBottom: '1rem'
     },
@@ -238,19 +243,19 @@ const App = () => {
       right: '-1.5rem',
       bottom: '-1.5rem',
       width: '12rem',
-      backgroundColor: 'white',
+      backgroundColor: '#111',
       borderRadius: '0.5rem',
-      border: '1px solid #e2e8f0',
-      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.5)'
     },
     chatHeader: {
       padding: '0.75rem',
-      borderBottom: '1px solid #f7fafc'
+      borderBottom: '1px solid #222'
     },
     chatLine: {
       width: '100%',
       height: '1rem',
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#222',
       borderRadius: '0.25rem'
     },
     chatBody: {
@@ -266,26 +271,50 @@ const App = () => {
       zIndex: '-1',
       width: '100%',
       height: '100%',
-      filter: 'blur(60px)',
-      opacity: '0.2',
-      background: 'linear-gradient(135deg, #3182ce 0%, #9f7aea 100%)'
+      filter: 'blur(80px)',
+      opacity: '0.4',
+      background: 'radial-gradient(circle at center, #4285F4 0%, transparent 70%)'
     },
     
-    // Powerful Features section styles - updated to light theme
+    // Blob styles
+    blob: {
+      position: 'absolute',
+      width: '300px',
+      height: '300px',
+      borderRadius: '100%',
+      filter: 'blur(80px)',
+      opacity: '0.4',
+      zIndex: '-1'
+    },
+    blob1: {
+      background: 'linear-gradient(to right, #4285F4, #34A853)',
+      top: '10%',
+      right: '10%'
+    },
+    blob2: {
+      background: 'linear-gradient(to right, #EA4335, #FBBC05)',
+      bottom: '10%',
+      left: '10%'
+    },
+    
+    // Powerful Features section styles - UPDATED TO DARK THEME
     featuresContainer: {
-      backgroundColor: '#f7fafc',
-      color: '#1a202c',
-      padding: '4rem 1rem'
+      backgroundColor: '#111',
+      color: 'white',
+      padding: '6rem 1rem'
     },
     featuresInner: {
       maxWidth: '1200px',
       margin: '0 auto'
     },
     featuresTitle: {
-      fontSize: '2.5rem',
+      fontSize: '3rem',
       fontWeight: 'bold',
       textAlign: 'center',
-      marginBottom: '4rem'
+      marginBottom: '4rem',
+      background: 'linear-gradient(90deg, #fff, #eee)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent'
     },
     featuresGrid: {
       display: 'grid',
@@ -293,12 +322,16 @@ const App = () => {
       gap: '1.5rem'
     },
     featureCard: {
-      backgroundColor: 'white',
-      borderRadius: '0.5rem',
+      backgroundColor: '#1a1a1a',
+      borderRadius: '0.75rem',
       padding: '2rem',
       position: 'relative',
-      boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-      border: '1px solid #e2e8f0'
+      boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
+      border: '1px solid rgba(255, 255, 255, 0.05)',
+      transition: 'transform 0.3s ease',
+      '&:hover': {
+        transform: 'translateY(-5px)'
+      }
     },
     featureHeader: {
       display: 'flex',
@@ -307,24 +340,25 @@ const App = () => {
     },
     featureTitle: {
       fontSize: '1.5rem',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      color: 'white'
     },
     featureSubtitle: {
-      color: '#718096',
+      color: 'rgba(255, 255, 255, 0.6)',
       marginTop: '0.5rem'
     },
     featureDesc: {
-      color: '#4a5568'
+      color: 'rgba(255, 255, 255, 0.7)'
     },
     commandBox: {
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#222',
       borderRadius: '0.25rem',
       padding: '0.75rem',
       fontFamily: 'monospace',
       fontSize: '0.875rem',
       marginTop: '1rem',
       marginBottom: '2rem',
-      border: '1px solid #e2e8f0'
+      border: '1px solid rgba(255, 255, 255, 0.05)'
     },
     commandRow: {
       display: 'flex',
@@ -332,7 +366,7 @@ const App = () => {
       marginBottom: '0.5rem'
     },
     commandDivider: {
-      borderTop: '1px solid #e2e8f0',
+      borderTop: '1px solid rgba(255, 255, 255, 0.05)',
       paddingTop: '0.5rem',
       marginTop: '0.5rem'
     },
@@ -343,20 +377,19 @@ const App = () => {
     shortcutKey: {
       width: '3rem',
       height: '3rem',
-      backgroundColor: '#f7fafc',
+      backgroundColor: '#222',
       borderRadius: '0.25rem',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       fontSize: '1.5rem',
-      border: '1px solid #e2e8f0',
-      color: '#4a5568'
+      border: '1px solid rgba(255, 255, 255, 0.1)',
+      color: 'rgba(255, 255, 255, 0.8)'
     },
     shortcutPlus: {
       margin: '0 0.5rem',
-      color: '#4a5568'
+      color: 'rgba(255, 255, 255, 0.6)'
     },
-    // Style for the personalized guidance card with network diagram
     personalizedHeader: {
       display: 'flex',
       alignItems: 'flex-start',
@@ -369,6 +402,10 @@ const App = () => {
 
   return (
     <div style={styles.container}>
+      {/* Blob Elements */}
+      <div style={{...styles.blob, ...styles.blob1}}></div>
+      <div style={{...styles.blob, ...styles.blob2}}></div>
+
       {/* Navigation - Fixed Header */}
       <nav style={styles.nav}>
         <div style={styles.navContent}>
@@ -386,7 +423,6 @@ const App = () => {
           <div style={styles.contentBox}>
             <h1 style={styles.heading}>
               The Customer Success Manager 
-              <br />
               <span style={styles.blueText}>of the Future</span>
             </h1>
             
@@ -443,13 +479,13 @@ const App = () => {
         </div>
       </div>
 
-      {/* Powerful Features Section - Updated with new feature cards */}
+      {/* Powerful Features Section - Updated with dark theme */}
       <div style={styles.featuresContainer}>
         <div style={styles.featuresInner}>
           <h2 style={styles.featuresTitle}>Powerful Features</h2>
           
           <div style={styles.featuresGrid}>
-            {/* Feature 1: Personalized In-App Agent - UPDATED */}
+            {/* Feature 1: Personalized In-App Agent */}
             <div style={styles.featureCard}>
               <div style={styles.personalizedHeader}>
                 <NetworkDiagram />
@@ -461,19 +497,19 @@ const App = () => {
               
               <div style={styles.commandBox}>
                 <div style={styles.commandRow}>
-                  <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#718096' }} />
-                  <span style={{ color: '#4a5568' }}>Type a goal or search...</span>
+                  <Command style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: 'rgba(255, 255, 255, 0.5)' }} />
+                  <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Type a goal or search...</span>
                 </div>
                 <div style={styles.commandDivider}>
                   <div style={styles.commandRow}>
-                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3b82f6' }} />
-                    <span style={{ color: '#4a5568' }}>Show my personalized journey</span>
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#4285F4' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Show my personalized journey</span>
                   </div>
                 </div>
                 <div style={styles.commandDivider}>
                   <div style={styles.commandRow}>
-                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#3182ce' }} />
-                    <span style={{ color: '#4a5568' }}>Complete my onboarding tasks</span>
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#4285F4' }} />
+                    <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Complete my onboarding tasks</span>
                   </div>
                 </div>
               </div>
@@ -482,7 +518,7 @@ const App = () => {
               </p>
             </div>
 
-            {/* Feature 2: Plug and Play - UPDATED */}
+            {/* Feature 2: Plug and Play */}
             <div style={styles.featureCard}>
               <div style={styles.featureHeader}>
                 <div>
@@ -496,7 +532,7 @@ const App = () => {
               </p>
             </div>
 
-            {/* Feature 3: Seamless Integration - UPDATED */}
+            {/* Feature 3: Seamless Integration */}
             <div style={styles.featureCard}>
               <div style={styles.featureHeader}>
                 <div>
