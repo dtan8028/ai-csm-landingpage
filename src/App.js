@@ -26,7 +26,7 @@ const App = () => {
             cy={size / 2}
             r={radius}
             fill="transparent"
-            stroke="#4285F4"
+            stroke="#888888"
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
             strokeDashoffset={strokeDashoffset}
@@ -47,7 +47,7 @@ const App = () => {
             justifyContent: 'center',
             fontSize: size / 4,
             fontWeight: 'bold',
-            color: '#4285F4'
+            color: '#888888'
           }}
         >
           {text}
@@ -62,19 +62,19 @@ const App = () => {
       <div style={{ width: size, height: size, position: 'relative', marginRight: '1rem' }}>
         <svg width={size} height={size} viewBox="0 0 200 200">
           {/* Central node */}
-          <circle cx="100" cy="100" r="15" fill="#4285F4" opacity="0.9"/>
+          <circle cx="100" cy="100" r="15" fill="#888888" opacity="0.9"/>
           
           {/* Connecting paths and nodes */}
-          <line x1="100" y1="100" x2="60" y2="60" stroke="#4285F4" strokeWidth="2"/>
+          <line x1="100" y1="100" x2="60" y2="60" stroke="#888888" strokeWidth="2"/>
           <circle cx="60" cy="60" r="8" fill="#999999" opacity="0.3"/>
           
-          <line x1="100" y1="100" x2="140" y2="60" stroke="#4285F4" strokeWidth="2"/>
+          <line x1="100" y1="100" x2="140" y2="60" stroke="#888888" strokeWidth="2"/>
           <circle cx="140" cy="60" r="8" fill="#999999" opacity="0.3"/>
           
-          <line x1="100" y1="100" x2="60" y2="140" stroke="#4285F4" strokeWidth="2"/>
+          <line x1="100" y1="100" x2="60" y2="140" stroke="#888888" strokeWidth="2"/>
           <circle cx="60" cy="140" r="8" fill="#999999" opacity="0.3"/>
           
-          <line x1="100" y1="100" x2="140" y2="140" stroke="#4285F4" strokeWidth="2"/>
+          <line x1="100" y1="100" x2="140" y2="140" stroke="#888888" strokeWidth="2"/>
           <circle cx="140" cy="140" r="8" fill="#999999" opacity="0.3"/>
           
           {/* Secondary connections */}
@@ -95,7 +95,7 @@ const App = () => {
   };
 
   const styles = {
-    // Main container styles - DARK THEME
+    // Main container styles - DARK THEME with removed blue accent
     container: {
       minHeight: '100vh',
       backgroundColor: 'black',
@@ -165,11 +165,10 @@ const App = () => {
       fontWeight: 'bold',
       marginBottom: '1.5rem',
       lineHeight: '1.1',
-      color: 'white'
-    },
-    blueText: {
-      color: '#4285F4',
-      display: 'block'
+      background: 'linear-gradient(90deg, #ffffff, #888888)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      display: 'inline-block'
     },
     paragraph: {
       fontSize: '1.25rem',
@@ -177,7 +176,7 @@ const App = () => {
       lineHeight: '1.6'
     },
     ctaButton: {
-      backgroundColor: '#4285F4',
+      backgroundColor: '#888888',
       color: 'white',
       padding: '0.75rem 1.5rem',
       borderRadius: '0.5rem',
@@ -206,7 +205,7 @@ const App = () => {
       borderRadius: '0.75rem',
       border: '1px solid rgba(255, 255, 255, 0.1)',
       overflow: 'hidden',
-      boxShadow: '0 20px 80px rgba(66, 133, 244, 0.2)'
+      boxShadow: '0 20px 80px rgba(255, 255, 255, 0.05)'
     },
     windowHeader: {
       height: '2rem',
@@ -272,32 +271,32 @@ const App = () => {
       width: '100%',
       height: '100%',
       filter: 'blur(80px)',
-      opacity: '0.4',
-      background: 'radial-gradient(circle at center, #4285F4 0%, transparent 70%)'
+      opacity: '0.2',
+      background: 'radial-gradient(circle at center, #888888 0%, transparent 70%)'
     },
     
-    // Blob styles
+    // Blob styles - updated to grayscale
     blob: {
       position: 'absolute',
       width: '300px',
       height: '300px',
       borderRadius: '100%',
       filter: 'blur(80px)',
-      opacity: '0.4',
+      opacity: '0.2',
       zIndex: '-1'
     },
     blob1: {
-      background: 'linear-gradient(to right, #4285F4, #34A853)',
+      background: 'linear-gradient(to right, #888888, #666666)',
       top: '10%',
       right: '10%'
     },
     blob2: {
-      background: 'linear-gradient(to right, #EA4335, #FBBC05)',
+      background: 'linear-gradient(to right, #555555, #777777)',
       bottom: '10%',
       left: '10%'
     },
     
-    // Powerful Features section styles - UPDATED TO DARK THEME
+    // Powerful Features section styles - UPDATED TO DARK THEME with grey accents
     featuresContainer: {
       backgroundColor: '#111',
       color: 'white',
@@ -312,7 +311,7 @@ const App = () => {
       fontWeight: 'bold',
       textAlign: 'center',
       marginBottom: '4rem',
-      background: 'linear-gradient(90deg, #fff, #eee)',
+      background: 'linear-gradient(90deg, #fff, #888)',
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent'
     },
@@ -422,8 +421,7 @@ const App = () => {
         <div style={styles.leftColumn}>
           <div style={styles.contentBox}>
             <h1 style={styles.heading}>
-              The Customer Success Manager 
-              <span style={styles.blueText}>of the Future</span>
+              The Customer Success Manager of the Future
             </h1>
             
             <p style={styles.paragraph}>
@@ -502,13 +500,13 @@ const App = () => {
                 </div>
                 <div style={styles.commandDivider}>
                   <div style={styles.commandRow}>
-                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#4285F4' }} />
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#888888' }} />
                     <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Show my personalized journey</span>
                   </div>
                 </div>
                 <div style={styles.commandDivider}>
                   <div style={styles.commandRow}>
-                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#4285F4' }} />
+                    <Eye style={{ width: '1rem', height: '1rem', marginRight: '0.5rem', color: '#888888' }} />
                     <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Complete my onboarding tasks</span>
                   </div>
                 </div>
